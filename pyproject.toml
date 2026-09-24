@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "warrant-cli"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Humans state intent. Agents write the code. Evidence decides what ships."
 readme = "README.md"
 license = "Apache-2.0"
@@ -30,3 +30,6 @@ warrant = "warrant.cli:main"
 
 [tool.setuptools]
 packages = ["warrant"]
+
+[tool.setuptools.dynamic]
+version = { attr = "warrant.__version__" }
