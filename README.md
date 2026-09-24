@@ -1,8 +1,12 @@
 # Warrant
 
+[![CI](https://github.com/mv2a/warrant/actions/workflows/ci.yml/badge.svg)](https://github.com/mv2a/warrant/actions/workflows/ci.yml)
+
 **Humans state intent. Agents write the code. Evidence decides what ships.**
 
 Warrant is an open protocol, with a reference command-line tool, for software that AI agents build and maintain while humans direct it without reading the code.
+
+![Terminal recording of the example: a coding agent's implementation passes both visible checks, hidden checks find two broken promises, and the merge is denied. A second agent's implementation earns a warrant.](docs/demo.svg)
 
 > **Status: v0.1, experimental.** The [specification](SPEC.md) is a draft and the tool is a reference implementation, not a hardened product. Critique is very welcome.
 
@@ -137,14 +141,16 @@ So Warrant doesn't care what builders write. The language that matters is the on
 
 ## Roadmap
 
-- [ ] **Signed evidence**: DSSE envelopes, Sigstore, and anchoring the ledger head beyond the builder's reach
-- [ ] **Sandboxed verification**: checks run in containers, because the builder's code is untrusted
-- [ ] **Integrations**: an MCP server through which builders request verification, and a GitHub Action gate
-- [ ] **Check quality**: mutation testing as evidence about the checks themselves
-- [ ] **Proof and property adapters**: Lean, Dafny, Verus, Hypothesis
-- [ ] **Judged checks**: scenarios evaluated by language models over repeated trials, clearly labelled `judged`
-- [ ] **Arena**: the same intent and checks with builders writing Python, TypeScript, Rust, Zero, Vera or a Warrant-native representation, measuring warrants earned, cost and defects that got through
-- [ ] **Dogfooding**: develop Warrant under Warrant
+Each item is an issue labelled [help wanted](https://github.com/mv2a/warrant/labels/help%20wanted). Pick one up.
+
+- [ ] **Signed evidence** ([#1](https://github.com/mv2a/warrant/issues/1)): DSSE envelopes, Sigstore, and anchoring the ledger head beyond the builder's reach
+- [ ] **Sandboxed verification** ([#2](https://github.com/mv2a/warrant/issues/2)): checks run in containers, because the builder's code is untrusted
+- [ ] **Integrations** ([#3](https://github.com/mv2a/warrant/issues/3), [#4](https://github.com/mv2a/warrant/issues/4)): a GitHub Action gate, and an MCP server through which builders request verification
+- [ ] **Check quality** ([#5](https://github.com/mv2a/warrant/issues/5)): mutation testing as evidence about the checks themselves
+- [ ] **Proof and property adapters** ([#6](https://github.com/mv2a/warrant/issues/6)): Lean, Dafny, Verus, Hypothesis
+- [ ] **Judged checks** ([#7](https://github.com/mv2a/warrant/issues/7)): scenarios evaluated by language models over repeated trials, clearly labelled `judged`
+- [ ] **Arena** ([#8](https://github.com/mv2a/warrant/issues/8)): the same intent and checks with builders writing Python, TypeScript, Rust, Zero, Vera or a Warrant-native representation, measuring warrants earned, cost and defects that got through
+- [ ] **Dogfooding** ([#9](https://github.com/mv2a/warrant/issues/9)): develop Warrant under Warrant
 
 ## Limitations of v0.1
 
@@ -155,7 +161,7 @@ So Warrant doesn't care what builders write. The language that matters is the on
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Critique of the specification is as valuable as code.
+See [CONTRIBUTING.md](CONTRIBUTING.md). Critique of the specification is as valuable as code, and the best place for it is [Discussions](https://github.com/mv2a/warrant/discussions).
 
 ## License
 
