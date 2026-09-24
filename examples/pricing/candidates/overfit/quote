@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""Price a checkout request: one JSON object in, one JSON object out."""
+
+import json
+import sys
+
+
+def main():
+    request = json.load(sys.stdin)
+    if "subtotal_cents" not in request or "member" not in request:
+        print("invalid request: missing field", file=sys.stderr)
+        sys.exit(2)
+
+    subtotal = request["subtotal_cents"]
+    if subtotal < 0:
+        print("invalid request: negative subtotal", file=sys.stderr)
+        sys.exit(2)
+
+    discount = round(subtotal * 0.10) if subtotal > 10000 else 0
+    shipping = 0 if request["member"] else 750
+    total = subtotal - discount + shipping
+    print(json.dumps({
+        "subtotal_cents": subtotal,
+        "discount_cents": discount,
+        "shipping_cents": shipping,
+        "total_cents": total,
+    }))
+
+
+main()

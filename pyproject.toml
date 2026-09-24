@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "warrant-cli"
+version = "0.1.0"
+description = "Humans state intent. Agents write the code. Evidence decides what ships."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [{ name = "mv2a" }]
+keywords = ["ai-agents", "coding-agents", "verification", "evidence", "spec-driven-development"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Homepage = "https://github.com/mv2a/warrant"
+Specification = "https://github.com/mv2a/warrant/blob/main/SPEC.md"
+Issues = "https://github.com/mv2a/warrant/issues"
+
+[project.scripts]
+warrant = "warrant.cli:main"
+
+[tool.setuptools]
+packages = ["warrant"]

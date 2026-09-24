@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Price a checkout request: one JSON object in, one JSON object out."""
+
+import json
+import sys
+
+DISCOUNT_THRESHOLD_CENTS = 100_00
+DISCOUNT_PERCENT = 10
+SHIPPING_CENTS = 7_50
+
+
+def refuse(reason):
+    print(f"invalid request: {reason}", file=sys.stderr)
+    sys.exit(2)
+
+
+def main():
+    try:
+        request = json.load(sys.stdin)
+    except json.JSONDecodeError as error:
+        refuse(f"not valid JSON ({error.msg})")
+    if not isinstance(request, dict):
+        refuse("expected a JSON object")
+
+    subtotal = request.get("subtotal_cents")
+    member = request.get("member")
+    # bool is a subclass of int in Python, so compare types exactly.
+    if type(subtotal) is not int or subtotal < 0:
+        refuse("subtotal_cents must be a whole number of cents, zero or more")
+    if type(member) is not bool:
+        refuse("member must be true or false")
+
+    discount = subtotal * DISCOUNT_PERCENT // 100 if subtotal > DISCOUNT_THRESHOLD_CENTS else 0
+    shipping = 0 if member else SHIPPING_CENTS
+    json.dump(
+        {
+            "subtotal_cents": subtotal,
+            "discount_cents": discount,
+            "shipping_cents": shipping,
+            "total_cents": subtotal - discount + shipping,
+        },
+        sys.stdout,
+    )
+    sys.stdout.write("\n")
+
+
+if __name__ == "__main__":
+    main()

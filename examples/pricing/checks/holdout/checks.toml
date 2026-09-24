@@ -1,0 +1,41 @@
+# Hidden checks: never shown to the builder. In a real project this folder lives
+# where builders can't read it, such as a separate private repository.
+
+[[check]]
+id = "H1"
+covers = ["G1"]
+statement = "The discount applies only above $100.00: none at $0.00, $99.90 or $100.00, and 10% at $100.01, $100.10, $500.00 and $10,000.00, for members and non-members alike."
+strength = "tested"
+run = ["python3", "threshold.py"]
+tags = ["money"]
+
+[[check]]
+id = "H2"
+covers = ["C1"]
+statement = "Fractional-cent discounts are rounded down, not to the nearest cent: $100.15 gets $10.01 off, and 59 more orders over $100.00 are checked the same way."
+strength = "tested"
+run = ["python3", "rounding.py"]
+tags = ["money"]
+
+[[check]]
+id = "H3"
+covers = ["G2"]
+statement = "Members pay no shipping and everyone else pays exactly $7.50, across 30 order sizes from $0.00 to $25,000.00."
+strength = "tested"
+run = ["python3", "shipping.py"]
+tags = ["money"]
+
+[[check]]
+id = "H4"
+covers = ["C2"]
+statement = "For 50 orders, the charge equals the subtotal minus the discount plus shipping, the discount never exceeds the subtotal, and nothing is negative."
+strength = "tested"
+run = ["python3", "arithmetic.py"]
+tags = ["money"]
+
+[[check]]
+id = "H5"
+covers = ["C3"]
+statement = "Ten kinds of invalid request are refused: negative, fractional, text and true/false subtotals; a missing subtotal or membership flag; a membership flag of \"yes\" or 1; text that isn't JSON; and a list instead of an object."
+strength = "tested"
+run = ["python3", "invalid.py"]

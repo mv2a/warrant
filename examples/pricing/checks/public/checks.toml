@@ -1,0 +1,17 @@
+# Visible checks: the builder may read and run these.
+
+[[check]]
+id = "P1"
+covers = ["C3", "C4"]
+statement = "The quote command follows the published contract: valid requests get whole-cent amounts, and a negative subtotal is refused."
+strength = "tested"
+run = ["python3", "contract.py"]
+tags = ["interface"]
+
+[[check]]
+id = "P2"
+covers = ["S1", "S2", "S3"]
+statement = "The three example orders in the intent are charged exactly what the intent says."
+strength = "tested"
+run = ["python3", "scenarios.py"]
+tags = ["money"]

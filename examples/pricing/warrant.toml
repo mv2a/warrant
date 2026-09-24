@@ -1,0 +1,25 @@
+# The control side of the checkout-pricing example. In real use it would live where
+# builders can't read it, and each builder would see only its own workspace.
+
+[project]
+name = "Checkout pricing"
+intent = "intent.md"
+workspace = "candidates/honest"
+ledger = "ledger"
+
+[checks]
+public = "checks/public"
+holdout = "checks/holdout"
+
+# Merging needs every check to pass and every promise to have a check.
+[gates.merge]
+checks = ["all"]
+min_strength = "tested"
+cover_all_intent = true
+
+# Releasing also needs a passing regression check for every recorded incident.
+[gates.release]
+after = ["merge"]
+checks = ["all"]
+min_strength = "tested"
+require_regressions = true
