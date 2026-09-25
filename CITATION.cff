@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: If you use Warrant, please cite it using these metadata.
+type: software
+title: "Warrant: an open protocol and reference tool for evidence-gated software built by AI agents"
+abstract: >-
+  Warrant is an open protocol, with a reference command-line tool, for software that AI
+  agents build and maintain while the people accountable for it direct it without
+  reading the code. A principal states intent as numbered promises. An examiner runs
+  approved checks, some visible to the builder and some hidden, against an exact snapshot
+  of the code and records the evidence. A deterministic gatekeeper issues a warrant or a
+  denial for each action, such as merge or release. Everything is recorded in an
+  append-only, hash-chained ledger.
+authors:
+  - given-names: Tiago Miranda
+    name-particle: de
+    family-names: Leão
+    alias: mv2a
+repository-code: https://github.com/mv2a/warrant
+url: https://github.com/mv2a/warrant
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-09-24
+keywords:
+  - AI coding agents
+  - software verification
+  - evidence
+  - hidden tests
+  - specification
+  - software supply chain
