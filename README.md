@@ -1,6 +1,7 @@
 # Warrant
 
 [![CI](https://github.com/mv2a/warrant/actions/workflows/ci.yml/badge.svg)](https://github.com/mv2a/warrant/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/warrant-cli)](https://pypi.org/project/warrant-cli/)
 
 **Humans state intent. Agents write the code. Evidence decides what ships.**
 
@@ -103,7 +104,7 @@ Candidate B earns warrants for both merge and release. Then a production inciden
 ## Use it
 
 ```bash
-pip install git+https://github.com/mv2a/warrant.git
+pip install warrant-cli
 warrant init my-service
 ```
 
