@@ -11,9 +11,8 @@ abstract: >-
   denial for each action, such as merge or release. Everything is recorded in an
   append-only, hash-chained ledger.
 authors:
-  - given-names: Tiago Miranda
-    name-particle: de
-    family-names: Leão
+  - given-names: Tiago
+    family-names: Miranda de Leão
     alias: mv2a
 repository-code: https://github.com/mv2a/warrant
 url: https://github.com/mv2a/warrant

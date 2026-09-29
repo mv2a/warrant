@@ -4,7 +4,7 @@
   "description": "<p>Warrant is an open protocol, with a reference command-line tool, for software that AI agents build and maintain while the people accountable for it direct it without reading the code. A principal states intent as numbered promises. An examiner runs approved checks, some visible to the builder and some hidden, against an exact snapshot of the code and records the evidence. A deterministic gatekeeper issues a warrant or a denial for each action, such as merge or release. Everything is recorded in an append-only, hash-chained ledger.</p><p>The repository was created, and v0.1.0 released, on 24 September 2026. Development was AI-assisted, and the commits carry Co-Authored-By trailers.</p>",
   "creators": [
     {
-      "name": "Leão, Tiago Miranda de"
+      "name": "Miranda de Leão, Tiago"
     }
   ],
   "license": "Apache-2.0",
