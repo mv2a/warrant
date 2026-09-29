@@ -20,6 +20,7 @@ url: https://github.com/mv2a/warrant
 license: Apache-2.0
 version: 0.1.1
 date-released: 2026-09-29
+doi: 10.5281/zenodo.23029803
 keywords:
   - AI coding agents
   - software verification
