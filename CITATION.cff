@@ -12,7 +12,7 @@ abstract: >-
   append-only, hash-chained ledger.
 authors:
   - given-names: Tiago
-    family-names: Miranda de Leão
+    family-names: Miranda de Leao
     alias: mv2a
 repository-code: https://github.com/mv2a/warrant
 url: https://github.com/mv2a/warrant
